@@ -1,0 +1,22 @@
+
+# Credenciales
+.env
+.env.*
+
+# Permitir plantilla de configuración
+!.env.example
+
+# Entorno virtual de Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Archivos temporales
+*.log
+.DS_Store
+Thumbs.db
+
+# Configuración local de editores
+.vscode/
+.idea/

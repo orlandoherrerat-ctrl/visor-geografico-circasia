@@ -1,0 +1,170 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Visor Geográfico de Circasia</title>
+
+    <!-- ================================================== -->
+    <!-- ESTILOS DE LEAFLET -->
+    <!-- ================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <!-- Estilos de herramientas de dibujo y medición -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"
+    >
+
+    <!-- ================================================== -->
+    <!-- ESTILOS PROPIOS DEL VISOR -->
+    <!-- ================================================== -->
+
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body>
+
+    <!-- ================================================== -->
+    <!-- ENCABEZADO -->
+    <!-- ================================================== -->
+
+    <header class="encabezado">
+
+        <div>
+            <h1>VISOR GEOGRÁFICO DE CIRCASIA</h1>
+            <p>Azimut Cero Topografía y Geomática</p>
+        </div>
+
+        <div id="estado-conexion" class="estado">
+            Conectando con la base de datos...
+        </div>
+
+    </header>
+
+
+    <!-- ================================================== -->
+    <!-- CONTENEDOR PRINCIPAL -->
+    <!-- ================================================== -->
+
+    <main class="contenedor">
+
+        <!-- PANEL LATERAL -->
+
+        <aside class="panel">
+
+            <h2>Capas geográficas</h2>
+
+            <p class="descripcion">
+                Activa o desactiva las capas que deseas visualizar.
+            </p>
+
+            <div class="grupo-capas">
+
+                <label>
+                    <input type="checkbox" id="capa-predios" checked>
+                    Predios
+                </label>
+
+                <label>
+                    <input type="checkbox" id="capa-construcciones">
+                    Construcciones
+                </label>
+
+                <label>
+                    <input type="checkbox" id="capa-manzanas">
+                    Manzanas
+                </label>
+
+                <label>
+                    <input type="checkbox" id="capa-vias" checked>
+                    Vías y nomenclatura
+                </label>
+
+            </div>
+
+
+            <hr>
+
+
+            <!-- INFORMACIÓN DE CAPAS -->
+
+            <h2>Información de las capas</h2>
+
+            <div id="informacion-capas">
+                <p>Cargando información...</p>
+            </div>
+
+
+            <hr>
+
+
+            <!-- CONSULTA DE PREDIOS -->
+
+            <h2>Consulta de predios</h2>
+
+            <input
+                type="text"
+                id="buscar-predio"
+                placeholder="Ingrese el código del predio"
+            >
+
+            <button id="btn-buscar">
+                Buscar predio
+            </button>
+
+            <div id="resultado-busqueda"></div>
+
+        </aside>
+
+
+        <!-- VISUALIZACIÓN DEL MAPA -->
+
+        <section class="contenedor-mapa">
+
+            <div id="mapa"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================================================== -->
+    <!-- PIE DE PÁGINA -->
+    <!-- ================================================== -->
+
+    <footer>
+
+        <p>
+            Visor Geográfico de Circasia |
+            Azimut Cero Topografía y Geomática
+        </p>
+
+    </footer>
+
+
+    <!-- ================================================== -->
+    <!-- LIBRERÍAS JAVASCRIPT -->
+    <!-- ================================================== -->
+
+    <!-- Leaflet: motor del mapa -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Leaflet.draw: herramientas de dibujo y medición -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+
+    <!-- JavaScript propio del visor -->
+    <script src="mapa.js"></script>
+
+</body>
+
+</html>
